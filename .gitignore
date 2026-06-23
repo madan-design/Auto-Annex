@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+env/
+
+# Backend generated data
+augmentor-platform/backend/augmented/
+augmentor-platform/backend/augmented_output/
+augmentor-platform/backend/generated_masks/
+augmentor-platform/backend/generated_sources/
+augmentor-platform/backend/detect_results/
+augmentor-platform/backend/runs/
+augmentor-platform/backend/training_dataset/
+augmentor-platform/backend/training_workspace/
+augmentor-platform/backend/yolo_dataset/
+
+# Model weights
+*.pt
+
+# Frontend
+augmentor-platform/frontend/node_modules/
+augmentor-platform/frontend/dist/
+
+# OS
+.DS_Store
+Thumbs.db
