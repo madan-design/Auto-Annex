@@ -5,7 +5,7 @@ const Augment = () => {
 
   const [source, setSource] = useState<File | null>(null);
   const [masks, setMasks] = useState<File[]>([]);
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(500);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<any>(null);
 
@@ -18,6 +18,11 @@ const Augment = () => {
 
       if (!masks.length) {
         alert("Select mask files");
+        return;
+      }
+
+      if (quantity < 500) {
+        alert("Quantity must be at least 500 for model creation");
         return;
       }
 
@@ -81,6 +86,7 @@ const Augment = () => {
         <p>Quantity:</p>
         <input
           type="number"
+          min={500}
           value={quantity}
           onChange={(e) =>
             setQuantity(Number(e.target.value))

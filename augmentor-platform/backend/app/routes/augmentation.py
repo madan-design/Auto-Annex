@@ -197,6 +197,12 @@ async def augment_dataset(
 
     outputs=[]
 
+    if quantity < 500:
+        return JSONResponse(
+            status_code=400,
+            content={"error": "Quantity must be at least 500 for model creation"}
+        )
+
     try:
 
         timestamp=datetime.now().strftime(
